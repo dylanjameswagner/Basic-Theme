@@ -9,15 +9,19 @@
 
 <?php // get_template_part('content','page'); ?>
 <?php // bof content-page.php ?>
+<?php $singular = get_post_type_object(get_post_type())->labels->singular_name; ?>
+
 				<article id="post-<?php the_ID(); ?>" class="<?php echo implode(' ',get_post_class()); ?>">
 					<header class="header">
-						<h1 class="title"><?php the_title(); ?></h1>
+						<h1 class="title">
+							<?php the_title(); ?>
+						</h1><!--.title-->
 					</header><!--.header-->
 
 					<section class="content">
 						<?php the_content(); ?>
 						<?php wp_link_pages(); ?>
-						<?php edit_post_link(__('Edit','custom').' '.get_post_type_object(get_post_type())->labels->singular_name,'<p class="edit -'.get_post_type().'">','</p>'); ?>
+						<?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
 					</section><!--.content-->
 
 					<?php comments_template(); ?>

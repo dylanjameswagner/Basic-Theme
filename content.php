@@ -1,7 +1,11 @@
+<?php $singular = get_post_type_object(get_post_type())->labels->singular_name; ?>
+
 					<article id="post-<?php the_ID(); ?>" class="article <?php echo implode(' ',get_post_class()); ?>">
 
 						<header class="header">
-							<h1 class="title"><?php if (!is_single()) : ?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php else : ?><?php the_title(); ?><?php endif; ?></h1>
+							<h1 class="title">
+								<?php if (!is_single()) : ?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php else : ?><?php the_title(); ?><?php endif; ?>
+							</h1><!--.title-->
 							<p class="published">
 								<span class="label">Published</span>
 								<span class="author"><span class="label">by</span> <?php the_author_posts_link(); ?></span>
@@ -13,7 +17,7 @@
 						<section class="content">
 							<?php the_content(); ?>
 							<?php wp_link_pages(); ?>
-							<?php edit_post_link(__('Edit','custom').' '.get_post_type_object(get_post_type())->labels->singular_name,'<p class="edit -'.get_post_type().'">','</p>'); ?>
+							<?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
 						</section><!--.content-->
 
 <?php if (is_single()) : ?>
@@ -56,8 +60,8 @@
 						<?php
 							the_post_navigation(array(
 								'screen_reader_text'	=> __('Post Navigation','custom'),
-								'prev_text'				=> __('Previous '.get_post_type_object(get_post_type())->labels->singular_name,'custom'),
-								'next_text'				=> __('Next '.get_post_type_object(get_post_type())->labels->singular_name,'custom'),
+								'prev_text'				=> __('Previous '.$singular,'custom'),
+								'next_text'				=> __('Next '.$singular,'custom'),
 							));
 						?>
 <?php endif; // is_single ?>
