@@ -49,7 +49,7 @@
 							<h2 class="name"><?php the_author_meta('display_name'); ?></h2>
 							<div class="description">
 								<?php the_author_meta('description'); ?>
-							</div>
+							</div><!--.description-->
 							<p><a href="mailto:<?php the_author_meta('email'); ?>"><?php the_author_meta('email'); ?></a></p>
 							<p><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php _e('View all posts by','custom'); echo ' '.get_the_author_meta('display_name'); ?></a></p>
 

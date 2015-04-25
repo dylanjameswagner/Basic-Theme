@@ -2,11 +2,10 @@
 
 			<section id="secondary"><div class="inner">
 
-				<?php get_search_form(); ?>
-
 <?php if (!dynamic_sidebar(strtolower(get_post_type_object(get_post_type())->label))) : ?>
 
-				<?php // default sidebar ?>
+				<?php // default content ?>
+				<?php get_search_form(); ?>
 
 <?php endif; // !dynamic_sidebar ?>
 
