@@ -1,8 +1,8 @@
+<?php $plural = get_post_type_object(get_post_type())->label; ?>
 <?php // if (is_active_sidebar(strtolower(get_post_type_object(get_post_type())->label))) : ?>
 
 			<section id="secondary"><div class="inner">
-
-<?php if (!dynamic_sidebar(strtolower(get_post_type_object(get_post_type())->label))) : ?>
+<?php if (!dynamic_sidebar(strtolower($plural))) : ?>
 
 				<?php // default content ?>
 				<?php get_search_form(); ?>
