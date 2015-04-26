@@ -8,7 +8,6 @@
 				<?php get_search_form(); ?>
 
 <?php endif; // !dynamic_sidebar ?>
-
 			</div><!--.inner--></section><!--#secondary-->
 
 <?php // endif; // is_active_sidebar ?>
