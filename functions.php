@@ -48,7 +48,7 @@
 	}
 	add_action('widgets_init','custom_register_sidebars');
 
-/* posts_per_page */
+/* modify posts_per_page */
 
 	function custom_pre_get_posts($query){
 		if (!is_admin() && (is_search() || is_archive())) : // is_tax() do i need this for custom tax?
@@ -63,3 +63,42 @@
 		endif;
 	}
 	add_action('pre_get_posts','custom_pre_get_posts');
+
+/* fix/fill menu classes */
+/* add/remove classes for page_for_posts */
+/* add/remove classes for custom post types */
+
+	function custom_menu_classes($classes,$item){
+
+		// optional - remove superfluous classes, since we are modifying classes anyway
+		$remove = array(
+			'menu-item-type-post_type',
+			'menu-item-object-page',
+		);
+
+		// page_for_posts - add missing classes to matching menu url
+		if ($item->url == get_the_permalink(get_option('page_for_posts'))) :
+			if ((is_archive() && !is_post_type_archive()) || is_singular('post')) :
+				$remove[] = 'current_page_parent';
+				$classes[] = 'current-menu-item page_item page-item-'.get_option('page_for_posts').' current_page_item current_page_parent';
+			endif;
+		endif;
+
+		// cpt - remove misplaced classes
+		if (is_post_type_archive() || is_singular(get_post_types(array('_builtin'=>false)))) :
+			$remove[] = 'current_page_parent';
+		endif;
+
+		// cpt - add missing classes to matching menu url
+		if ($item->url == home_url(trailingslashit(get_post_type_object(get_post_type())->rewrite['slug']))) :
+			if (is_post_type_archive()) :
+				$classes[] = 'current-menu-item page_item page-item-5778 current_page_item';
+			elseif (is_singular(get_post_types(array('_builtin'=>false)))) :
+				$classes[] = 'current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor';
+			endif;
+		endif;
+
+		return array_diff($classes,$remove);
+	}
+	add_filter('nav_menu_css_class','custom_menu_classes',10,2);
+	add_filter('page_css_class','custom_menu_classes',10,2);
