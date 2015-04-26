@@ -7,7 +7,7 @@
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 
-<?php // get_template_part('content','page'); ?>
+<?php // get_template_part('content','page'); // content-page.php defaults to content.php ?>
 <?php // bof content-page.php ?>
 <?php $singular = get_post_type_object(get_post_type())->labels->singular_name; ?>
 

@@ -10,11 +10,12 @@
 				<article class="article">
 					<header class="header">
 						<h1 class="title">
-							<?php echo is_post_type_archive() ? $plural : get_the_title(get_option('page_for_posts')); ?>
+							<?php // get_the_title(get_option('page_for_posts')); ?>
+							<?php echo is_post_type_archive() || is_singular(get_post_types(array('_builtin'=>false))) ? $plural : get_the_title(get_option('page_for_posts')); ?>
 						</h1><!--.title-->
 					</header><!--.header-->
 
-					<?php // FIXME explore $query = new WP_Query('page_id={ID}}'); ?>
+					<?php // FIXME explore WP_Query('page_id='.get_option('page_for_posts')); to get page_for_posts the_content(); ?>
 
 					<section class="articles -<?php echo strtolower($plural); ?>">
 
