@@ -38,8 +38,9 @@
 
 							<section class="content -excerpt">
 								<?php the_excerpt(); ?>
-								<?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
 							</section><!--.content-->
+
+							<?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
 						</article><!--.article-->
 <?php // eof content-search.php ?>
 <?php endwhile; // have_posts ?>
@@ -49,8 +50,8 @@
 					<?php
 						the_posts_pagination(array(
 							'screen_reader_text'	=> __('Posts Navigation','custom'),
-							'prev_text'				=> __('Previous','custom').'<span class="screen-reader-text"> Page</span>',
-							'next_text'				=> __('Next','custom').'<span class="screen-reader-text"> Page</span>',
+							'prev_text'				=> __('Previous','custom').'<span class="screen-reader-text"> '.__('Page','custom').'</span>',
+							'next_text'				=> __('Next','custom').'<span class="screen-reader-text"> '.__('Page','custom').'</span>',
 							'before_page_number'	=> '<span class="screen-reader-text">'.__('Page','custom').' </span>',
 						));
 					?>

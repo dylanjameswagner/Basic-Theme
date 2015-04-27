@@ -1,7 +1,6 @@
 	</div><!--#top-->
 
 	<section id="footer"><div class="inner contain">
-
 		<p class="return">
 			<a title="<?php echo _x('Return to Top','scroll to top of document','custom'); ?>" href="#top">
 				<?php echo _x('Return to Top','scroll to top of document','custom'); ?>
@@ -21,11 +20,10 @@
 
 			<p class="credit">
 				<a target="_blank" href="<?php echo wp_get_theme()->get('AuthorURI'); ?>">
-					<?php _e('Developed by','custom'); ?> <?php echo wp_get_theme()->get('Author'); ?>
+					<?php echo __('Developed by','custom').' '.wp_get_theme()->get('Author'); ?>
 				</a>
 			</p><!--.credit-->
 		</footer><!--.notice-->
-
 	</div><!--.inner--></section><!--#footer-->
 
 <!--[if gte IE 9]><!-->

@@ -50,10 +50,13 @@
 								}
 
 								comment_form(array(
-									'comment_notes_after'	=> '<p class="allowed-tags">'.sprintf(__('<span class="meta-title">Comments support these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:</span><br/> %s' ),implode(' ',$tags)).'</p>', //  <code>'.allowed_tags().'</code>
-									'title_reply'		   => __('Respond'),
-									'label_submit'		   => __('Post'),
-									'cancel_reply_link'   => __('Cancel Reply'),
+									'comment_notes_before'	=> '<p class="notes before">'.__('Your email address will not be published. Required fields are marked','custom').' <span class="required">*</span></p>',
+									'comment_notes_after'	=> '<p class="notes after">'.sprintf('<span class="meta-title">'.__('Comments support these','custom').' <abbr title="HyperText Markup Language">HTML</abbr> '.__('tags and attributes:','custom').'</span><br/> <span class="meta-content">%s</span>',implode(' ',$tags)).'</p>', //  <code>'.allowed_tags().'</code>
+									'title_reply'			=> __('Respond','custom'),
+									'title_reply_to'		=> __('Leave a Reply to %s','custom'),
+									'cancel_reply_link'		=> __('Cancel Reply','custom'),
+									'label_submit'			=> __('Post Response','custom'),
+									'class_submit'			=> 'button'
 								));
 							?>
 						</div><!--.inner--></section><!--.comments-->

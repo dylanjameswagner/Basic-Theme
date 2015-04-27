@@ -17,8 +17,9 @@
 						<section class="content">
 							<?php the_content(); ?>
 							<?php wp_link_pages(); ?>
-							<?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
 						</section><!--.content-->
+
+						<?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
 
 <?php if (is_single()) : ?>
 						<footer class="footer">
