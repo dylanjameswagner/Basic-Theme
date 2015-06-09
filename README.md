@@ -1,7 +1,7 @@
 # Basic
 A custom theme for WordPress.
 
-[dylanjameswagner.com/wordpress](http://dylanjameswagner.com/wordpress/)
+Demo - [dylanjameswagner.com/wordpress](http://dylanjameswagner.com/wordpress/)
 
 ## Purpose
 
