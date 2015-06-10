@@ -11,5 +11,5 @@ Intended as a comprehensive starting point for new WordPress developers.
 
 ## Resources
 
-<a target="_blank" href="https://developer.wordpress.org/themes/basics/template-hierarchy/">WordPress Theme Handbook</a>
+<a target="_blank" href="https://developer.wordpress.org/themes/basics/template-hierarchy/">WordPress Theme Handbook</a><br/>
 <a target="_blank" href="https://codex.wordpress.org/">WordPress Codex</a>
