@@ -1,9 +1,9 @@
 # Basic
-A custom theme for WordPress.
+A starter theme for custom WordPress development.
 
 ## Purpose
 
-Intended as a comprehensive starting point for new WordPress developers.
+Intended as a comprehensive starting point for developers new to WordPress.
 
 ## Demo
 <!--[dylanjameswagner.com/wordpress](http://dylanjameswagner.com/wordpress/)-->

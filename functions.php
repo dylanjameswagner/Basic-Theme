@@ -9,7 +9,7 @@
 		wp_register_style('constructs'	,get_stylesheet_directory_uri().'/public/styles/constructs.css'	); wp_enqueue_style('constructs');
 		wp_register_style('custom'		,get_stylesheet_directory_uri().'/public/styles/custom.css'		); wp_enqueue_style('custom');
 
-		wp_register_script('html5shiv'	,get_stylesheet_directory_uri().'/public/scripts/html5shiv.printshiv-3.6.2.min.js'	); wp_enqueue_script('html5shiv');
+		wp_register_script('html5shiv'	,get_stylesheet_directory_uri().'/public/scripts/html5shiv-printshiv-3.7.2.min.js'	); wp_enqueue_script('html5shiv');
 		wp_register_script('prefixfree'	,get_stylesheet_directory_uri().'/public/scripts/prefixfree-1.0.7.min.js'			); wp_enqueue_script('prefixfree');
 
 		wp_register_script('custom'		,get_stylesheet_directory_uri().'/public/scripts/custom.js',array('jquery'),false,true); wp_enqueue_script('custom');
