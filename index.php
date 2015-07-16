@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 
-		<section id="content"><div class="inner contain">
-
-			<main id="primary"><div class="inner">
+		<section id="content"><div class="inner contain inset">
+			<main id="primary" class="split"><div class="inner">
 
 <?php if (have_posts()) : ?>
 <?php $plural = get_post_type_object(get_post_type())->label; ?>
