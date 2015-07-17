@@ -9,13 +9,14 @@
 
     <title><?php
         if (is_front_page()) :
-            echo get_bloginfo('name');
+            bloginfo('name');
             echo get_bloginfo('description') ? ' | '.get_bloginfo('description') : null;
         elseif (is_404() || (is_search() && empty($_GET['s']))) :
             echo __('Search','carbon').' | ';
-            echo get_bloginfo('name');
+            bloginfo('name');
         else :
             wp_title('|',true,'right');
+            bloginfo('name');
         endif;
     ?></title>
 

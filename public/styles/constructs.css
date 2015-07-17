@@ -50,6 +50,7 @@
     .menu .horizontal ul {
         display: none;
         position: absolute;
+        min-width: 100%;
     }
     .menu .horizontal li {
         list-style: none;
