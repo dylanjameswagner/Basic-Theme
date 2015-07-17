@@ -44,7 +44,7 @@
         margin-left: -.6em;
     }
     .menu .horizontal a {
-        padding: .5em .6em;
+        padding: .3em .6em .25em;
         text-decoration: none;
     }
     .menu .horizontal ul {
@@ -59,7 +59,8 @@
         display: block;
     }
     .menu .horizontal > li {
-        float: left;
+        display: inline-block;
+        vertical-align: middle;
     }
     .menu .horizontal > li:hover {
         z-index: 2;

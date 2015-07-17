@@ -1,7 +1,11 @@
     </div><!--#top-->
 
     <section id="footer"><div class="inner contain">
-
+        <p class="return">
+            <a title="<?php echo _x('Return to Top','scroll to top of document','custom'); ?>" href="#top">
+                <?php echo _x('Return to Top','scroll to top of document','custom'); ?>
+            </a>
+        </p><!--.return-->
 <?php
     wp_nav_menu(array(
         'container'       => 'nav',
@@ -12,13 +16,6 @@
         'menu_class'      => 'list horizontal contain',
     ));
 ?>
-
-        <p class="return">
-            <a title="<?php echo _x('Return to Top','scroll to top of document','custom'); ?>" href="#top">
-                <?php echo _x('Return to Top','scroll to top of document','custom'); ?>
-            </a>
-        </p><!--.return-->
-
         <p class="social">
             <a class="facebook" title="Facebook" href="#">Facebook</a>
             <a class="twitter" title="Twitter" href="#">Twitter</a>
