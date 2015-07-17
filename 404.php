@@ -1,1 +1,1 @@
-<?php include 'search.php'; // use the search page as the 404 ?>
+<?php include 'search.php'; ?>

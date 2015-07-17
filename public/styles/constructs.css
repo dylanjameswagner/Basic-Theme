@@ -1,135 +1,95 @@
-/* constructs */
-
-/* base */
-
-	h1, h2, h3, h4, h5, h6,
-	p, ul, ol, dl, address,
-	header, footer, main,
-	nav, section, article {
-		margin-top: 1em;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		font-weight: 700;
-		line-height: 1.2;
-	}
-
-	h1 { font-size: 27px; }
-	h2 { font-size: 22px; }
-	h3 { font-size: 20px; }
-	h4 { font-size: 17px; }
-	h5 { font-size: 16px; }
-	h6 { font-size: 14px; }
-
-	h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
-		margin-top: .25em;
-	}
-
-	:first-child {
-		margin-top: 0;
-	}
+/* constructs.css */
 
 /* contain */
 
-	.contain {}
-	.contain:after {
-		content: '';
-		display: block;
-		clear: both;
-	}
+    .contain {}
+    .contain:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
 
 /* menu */
 
-	.menu {}
-	.menu .title {
-		display: none;
-	}
-	.menu ul {
-		margin: 0; padding: 0;
-	}
-	.menu li {
-		list-style: none;
-	}
-	.menu a {
-		display: block;
-		white-space: nowrap;
-		text-decoration: none;
-	}
-	.menu a:hover {
-		text-decoration: none;
-	}
+    .menu ul {
+        margin: 0;
+        padding: 0;
+    }
+    .menu li {
+        list-style: none;
+    }
+    .menu a {
+        display: block;
+        white-space: nowrap;
+        text-decoration: none;
+    }
 
-	.menu .menu-item-has-children > a:after {
-		content: '';
-	}
+    .menu .menu-item-has-children > a:after {
+        content: '';
+    }
 
-	.menu .current-menu-ancestor,
-	.menu .current-menu-parent,
-	.menu .current-menu-item {}
+    .menu .current-menu-ancestor,
+    .menu .current-menu-parent,
+    .menu .current-menu-item {}
 
-	.menu .current-menu-ancestor > a,
-	.menu .current-menu-parent > a,
-	.menu .current-menu-item > a {
-		color: red;
-	}
+    .menu .current-menu-ancestor > a,
+    .menu .current-menu-parent > a,
+    .menu .current-menu-item > a {
+        color: red;
+    }
 
 /* menu horizontal */
 
-	.menu .horizontal {
-		display: block;
-		position: relative;
-		margin: 0 -.6em;
-	}
-	.menu .horizontal ul {
-		display: none;
-		position: absolute;
-		margin: 0; padding: 0;
-	}
-	.menu .horizontal li {
-		position: relative; z-index: 1;
-	}
-	.menu .horizontal li:hover > ul {
-		display: block;
-	}
-	.menu .horizontal a {
-		padding: .325em .6em;
-	}
-	.menu .horizontal a:hover {
-		color: red;
-	}
+    .menu .horizontal {
+        margin-left: -.6em;
+    }
+    .menu .horizontal a {
+        padding: .5em .6em;
+        text-decoration: none;
+    }
+    .menu .horizontal ul {
+        display: none;
+        position: absolute;
+    }
+    .menu .horizontal li {
+        list-style: none;
+        position: relative; z-index: 1;
+    }
+    .menu .horizontal li:hover > ul {
+        display: block;
+    }
+    .menu .horizontal > li {
+        float: left;
+    }
+    .menu .horizontal > li:hover {
+        z-index: 2;
+    }
+    .menu .horizontal > li > ul {
+        display: none;
+        top: 100%; left: 0;
+    }
+    .menu .horizontal > li > ul ul {
+        top: 0; left: 100%;
+    }
 
-	.menu .horizontal > li {
-		float: left;
-	}
-	.menu .horizontal > li:hover {
-		z-index: 2;
-	}
-	.menu .horizontal > li > ul {
-		display: none;
-		top: 100%; left: 0;
-	}
-	.menu .horizontal > li > ul ul {
-		top: 0; left: 100%;
-	}
+    .menu .horizontal > li:hover,
+    .menu .horizontal > .menu-item-has-children:hover,
+    .menu .horizontal > .menu-item-has-children:hover ul {
+        background-color: #eee;
+    }
 
-	.menu .horizontal > li:hover,
-	.menu .horizontal > .menu-item-has-children:hover,
-	.menu .horizontal > .menu-item-has-children:hover ul {
-		background-color: #eee;
-	}
+    .menu .horizontal > li:hover ul,
+    .menu .horizontal > .current-menu-ancestor,
+    .menu .horizontal > .current-menu-parent,
+    .menu .horizontal > .current-menu-item {
+        background-color: #fff;
+    }
 
-	.menu .horizontal > li:hover ul,
-	.menu .horizontal > .current-menu-ancestor,
-	.menu .horizontal > .current-menu-parent,
-	.menu .horizontal > .current-menu-item {
-		background-color: #fff;
-	}
-
-	.menu .horizontal > .current-menu-ancestor:hover,
-	.menu .horizontal > .current-menu-parent:hover,
-	.menu .horizontal > .current-menu-item:hover,
-	.menu .horizontal > .current-menu-ancestor:hover ul,
-	.menu .horizontal > .current-menu-parent:hover ul,
-	.menu .horizontal > .current-menu-item:hover ul {
-		background-color: #fff;
-	}
+    .menu .horizontal > .current-menu-ancestor:hover,
+    .menu .horizontal > .current-menu-parent:hover,
+    .menu .horizontal > .current-menu-item:hover,
+    .menu .horizontal > .current-menu-ancestor:hover ul,
+    .menu .horizontal > .current-menu-parent:hover ul,
+    .menu .horizontal > .current-menu-item:hover ul {
+        background-color: #fff;
+    }

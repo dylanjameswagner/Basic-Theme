@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-		<section id="content"><div class="inner contain">
+        <section id="content"><div class="inner contain">
 
-			<main id="primary"><div class="inner">
+            <main id="primary"><div class="inner">
 
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
@@ -11,31 +11,31 @@
 <?php // bof content-page.php ?>
 <?php $singular = get_post_type_object(get_post_type())->labels->singular_name; ?>
 
-				<article id="post-<?php the_ID(); ?>" class="article <?php echo implode(' ',get_post_class()); ?>">
-					<header class="header">
-						<h1 class="title">
-							<?php the_title(); ?>
-						</h1><!--.title-->
-					</header><!--.header-->
+                <article id="post-<?php the_ID(); ?>" class="article <?php echo implode(' ',get_post_class()); ?>">
+                    <header class="header">
+                        <h1 class="heading">
+                            <?php the_title(); ?>
+                        </h1><!--.heading-->
+                    </header><!--.header-->
 
-					<section class="content">
-						<?php the_content(); ?>
-						<?php wp_link_pages(); ?>
-					</section><!--.content-->
+                    <section class="content">
+                        <?php the_content(); ?>
+                        <?php wp_link_pages(); ?>
+                    </section><!--.content-->
 
-					<?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
+                    <?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
 
-					<?php comments_template(); ?>
-				</article><!--.article-->
+                    <?php comments_template(); ?>
+                </article><!--.article-->
 <?php // eof content-page.php ?>
 
 <?php endwhile; // have_posts ?>
 <?php endif; // have_posts ?>
 
-			</div><!--.inner--></main><!--#primary-->
+            </div><!--.inner--></main><!--#primary-->
 
 <?php get_sidebar(); ?>
 
-		</div><!--.inner--></section><!--#content-->
+        </div><!--.inner--></section><!--#content-->
 
 <?php get_footer(); ?>
