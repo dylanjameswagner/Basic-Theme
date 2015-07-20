@@ -19,7 +19,7 @@
                     <section class="articles -<?php echo strtolower($plural); ?>">
 
 <?php while (have_posts()) : the_post(); ?>
-<?php get_template_part('content',get_post_format()); // content-{format}.php defaults to content.php ?>
+<?php get_template_part('content'.'-'.get_post_type(),get_post_format()); // content-{type}-{format}.php defaults to content.php ?>
 <?php endwhile; // have_posts ?>
 
                     </section><!--.articles-->
