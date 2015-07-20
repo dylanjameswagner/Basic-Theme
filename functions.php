@@ -12,7 +12,7 @@
     function custom_wp_enqueue_scripts(){
         wp_register_style('open-sans','http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic'); wp_enqueue_style('open-sans');
 
-        wp_register_style('normalize'   ,get_stylesheet_directory_uri().'/public/styles/vendor/normalize.3.0.3.min.css'); wp_enqueue_style('normalize');
+        wp_register_style('normalize'   ,get_stylesheet_directory_uri().'/public/styles/vendor/normalize-3.0.3.min.css'); wp_enqueue_style('normalize');
 
         wp_register_style('base'        ,get_stylesheet_directory_uri().'/public/styles/base.css'       ); wp_enqueue_style('base');
         wp_register_style('wordpress'   ,get_stylesheet_directory_uri().'/public/styles/wordpress.css'  ); wp_enqueue_style('wordpress');
