@@ -10,7 +10,20 @@
                     <header class="header">
                         <h1 class="heading">
                             <?php // get_the_title(get_option('page_for_posts')); ?>
-                            <?php echo is_post_type_archive() || is_singular(get_post_types(array('_builtin'=>false))) ? $plural : get_the_title(get_option('page_for_posts')); ?>
+                            <?php
+                                // is_post_type_archive() || is_singular(get_post_types(array('_builtin'=>false)))) :
+                                if (is_archive()) :
+                                    echo 'Archive of '.$plural;
+
+                                        if (is_author()) : echo ' by Author';
+                                    elseif (is_year())   : echo ' by Year';
+                                    elseif (is_month())  : echo ' by Month';
+                                    elseif (is_day())    : echo ' by Day';
+                                    endif;
+                                else :
+                                    echo $plural;
+                                endif;
+                            ?>
                         </h1><!--.heading-->
                     </header><!--.header-->
 
