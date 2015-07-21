@@ -47,13 +47,14 @@
     h1, h2, h3, h4, h5, h6,
     p, ul, ol, dl, address,
     div, header, footer, section,
-    nav, main, article {
+    nav, main, article, aside, figure {
         margin: 1.6rem 0 0 0;
     }
 
     h1, h2, h3, h4, h5, h6 {
+        padding-bottom: .2rem;
         /* font-weight: 700; */
-        line-height: 1.6;
+        line-height: 1;
     }
 
     h1 { font-size:  2.25em; } /* default 36px */
@@ -67,8 +68,9 @@
     h2 + *,
     h3 + *,
     h4 + *,
-    h5 + * {
-        margin-top: .25em;
+    h5 + *,
+    h6 + * {
+        margin-top: 0;
     }
 
     ol ol,
@@ -84,9 +86,19 @@
 
 /* tables */
 
+    thead + tbody {
+        border-top: 2px inset;
+    }
+
     th,
     td {
         vertical-align: top;
+        padding: 0 0 0 .5em;
+    }
+
+    th:first-child,
+    td:first-child {
+        padding-left: 0;
     }
 
     th {
