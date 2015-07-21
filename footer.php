@@ -25,9 +25,9 @@
     endif;
 ?>
         <p class="social">
-            <a class="facebook" title="Facebook" href="#">Facebook</a>
-            <a class="twitter" title="Twitter" href="#">Twitter</a>
-            <a class="linkedin" title="LinkedIn" href="#">LinkedIn</a>
+            <a class="facebook" title="Facebook" target="_blank" href="http://facebook.com/">Facebook</a>
+            <a class="twitter" title="Twitter" target="_blank" href="http://twitter.com/">Twitter</a>
+            <a class="linkedin" title="LinkedIn" target="_blank" href="http://linkedin.com/">LinkedIn</a>
         </p><!--.social-->
 
         <footer class="notice">
