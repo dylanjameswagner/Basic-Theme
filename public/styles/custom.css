@@ -100,12 +100,12 @@
 
     #header {}
     #header {
-        padding: 10px 0 0;
+        padding: 1em 0 0;
         background-color: rgba(0,0,0,.1);
     }
     #header > .inner {}
     #header-menu {
-        margin-top: 1.6rem;
+        margin-top: 1em;
     }
 
 /* footer */
