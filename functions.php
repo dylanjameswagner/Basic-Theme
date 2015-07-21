@@ -1,6 +1,6 @@
 <?php
 
-/* theme options */
+/* setup */
 
     function carbon_after_setup_theme(){
         add_theme_support('html5',array('search-form','comment-list','comment-form','gallery','caption'));
@@ -12,33 +12,33 @@
     function custom_wp_enqueue_scripts(){
         wp_register_style('open-sans','http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic'); wp_enqueue_style('open-sans');
 
-        wp_register_style('normalize'   ,get_stylesheet_directory_uri().'/public/styles/vendor/normalize-3.0.3.min.css'); wp_enqueue_style('normalize');
+        wp_register_style('normalize'   ,get_template_directory_uri().'/public/styles/vendor/normalize-3.0.3.min.css'); wp_enqueue_style('normalize');
 
-        wp_register_style('base'        ,get_stylesheet_directory_uri().'/public/styles/base.css'       ); wp_enqueue_style('base');
-        wp_register_style('wordpress'   ,get_stylesheet_directory_uri().'/public/styles/wordpress.css'  ); wp_enqueue_style('wordpress');
-        wp_register_style('constructs'  ,get_stylesheet_directory_uri().'/public/styles/constructs.css' ); wp_enqueue_style('constructs');
-        wp_register_style('custom'      ,get_stylesheet_directory_uri().'/public/styles/custom.css'     ); wp_enqueue_style('custom');
+        wp_register_style('base'        ,get_template_directory_uri().'/public/styles/base.css'       ); wp_enqueue_style('base');
+        wp_register_style('wordpress'   ,get_template_directory_uri().'/public/styles/wordpress.css'  ); wp_enqueue_style('wordpress');
+        wp_register_style('constructs'  ,get_template_directory_uri().'/public/styles/constructs.css' ); wp_enqueue_style('constructs');
+        wp_register_style('custom'      ,get_template_directory_uri().'/public/styles/custom.css'     ); wp_enqueue_style('custom');
 
-        // wp_register_script('html5shiv'  ,get_stylesheet_directory_uri().'/public/scripts/vendor/html5shiv-printshiv-3.7.2.min.js'); wp_enqueue_script('html5shiv');
-        // wp_register_script('prefixfree' ,get_stylesheet_directory_uri().'/public/scripts/vendor/prefixfree-1.0.7.min.js'         ); wp_enqueue_script('prefixfree');
+        wp_register_script('html5shiv'  ,get_template_directory_uri().'/public/scripts/vendor/html5shiv-printshiv-3.7.2.min.js'); wp_enqueue_script('html5shiv');
+        wp_register_script('prefixfree' ,get_template_directory_uri().'/public/scripts/vendor/prefixfree-1.0.7.min.js'         ); wp_enqueue_script('prefixfree');
 
-        // wp_register_script('custom'     ,get_stylesheet_directory_uri().'/public/scripts/custom.js',array('jquery'),false,true); wp_enqueue_script('custom');
+        // wp_register_script('custom'     ,get_template_directory_uri().'/public/scripts/custom.js',array('jquery'),false,true); wp_enqueue_script('custom');
     }
     add_action('wp_enqueue_scripts','custom_wp_enqueue_scripts');
 
-/* widgets */
+/* sidebars */
 
     function custom_register_sidebars(){
         $sidebars = array(
-            __('Pages'  ,'custom'),
             __('Posts'  ,'custom'),
+            __('Pages'  ,'custom'),
 //          __('Search' ,'custom'),
         );
 
         foreach ($sidebars as $sidebar) :
             register_sidebar(array(
-                'name'          => $sidebar,
                 'id'            => sanitize_title($sidebar),
+                'name'          => $sidebar,
                 'before_widget' => '<aside id="%1$s" class="widget %2$s">'.PHP_EOL,
                 'after_widget'  => '</aside>'.PHP_EOL,
                 'before_title'  => '<h3 class="title">',
@@ -94,5 +94,5 @@
 
         return array_diff($classes,$remove);
     }
-    add_filter('nav_menu_css_class','custom_menu_classes',10,2);
-    add_filter('page_css_class','custom_menu_classes',10,2);
+    // add_filter('nav_menu_css_class','custom_menu_classes',10,2);
+    // add_filter('page_css_class','custom_menu_classes',10,2);
