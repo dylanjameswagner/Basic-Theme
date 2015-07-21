@@ -7,7 +7,8 @@ Intended as a comprehensive starting point for developers new to WordPress.
 
 ## Demo
 <!--[dylanjameswagner.com/wordpress](http://dylanjameswagner.com/wordpress/)-->
-<a target="_blank" href="http://dylanjameswagner.com/wordpress/">dylanjameswagner.com/wordpress</a>
+<a target="_blank" href="http://dylanjameswagner.com/wordpress/">dylanjameswagner.com/wordpress</a><br/>
+<!--a target="_blank" href="http://dylanjameswagner.com/wordpress/basic/">dylanjameswagner.com/wordpress/basic</a-->
 
 ## Resources
 
