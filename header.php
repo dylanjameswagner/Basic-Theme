@@ -46,14 +46,22 @@
 <?php endif; // get_bloginfo description ?>
 
 <?php
-    wp_nav_menu(array(
-        'container'       => 'nav',
-        'theme_location'  => 'header',
-        'container_id'    => 'header-menu',
-        'menu_id'         => 'header-menu-list',
-        'container_class' => 'menu',
-        'menu_class'      => 'list horizontal contain',
-    ));
+    if (has_nav_menu('header')) :
+        wp_nav_menu(array(
+            'container'       => 'nav',
+            'theme_location'  => 'header',
+            'container_id'    => 'header-menu',
+            'menu_id'         => 'header-menu-list',
+            'container_class' => 'menu horizontal',
+            'menu_class'      => 'contain',
+        ));
+    else :
+        wp_page_menu(array(
+            'menu_class' => 'menu horizontal',
+            'show_home'  => true,
+            'depth'      => 0,
+        ));
+    endif;
 ?>
             </header><!--.header-->
         </div><!--.inner--></section><!--#header-->

@@ -7,14 +7,22 @@
             </a>
         </p><!--.return-->
 <?php
-    wp_nav_menu(array(
-        'container'       => 'nav',
-        'theme_location'  => 'footer',
-        'container_id'    => 'footer-menu',
-        'menu_id'         => 'footer-menu-list',
-        'container_class' => 'menu',
-        'menu_class'      => 'list horizontal contain',
-    ));
+    if (has_nav_menu('footer')) :
+        wp_nav_menu(array(
+            'container'       => 'nav',
+            'theme_location'  => 'footer',
+            'container_id'    => 'footer-menu',
+            'menu_id'         => 'footer-menu-list',
+            'container_class' => 'menu horizontal',
+            'menu_class'      => 'list contain',
+        ));
+    else :
+        wp_page_menu(array(
+            'menu_class' => 'menu horizontal',
+            'show_home'  => true,
+            'depth'      => 1,
+        ));
+    endif;
 ?>
         <p class="social">
             <a class="facebook" title="Facebook" href="#">Facebook</a>
