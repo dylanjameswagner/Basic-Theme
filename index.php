@@ -1,58 +1,72 @@
 <?php get_header(); ?>
 
-        <section id="content"><div class="inner contain">
-            <main id="primary" class="split"><div class="inner">
+<section class="content">
+	<main class="primary">
 
-<?php if (have_posts()) : ?>
-<?php $plural = get_post_type_object(get_post_type())->label; ?>
+		<?php if (have_posts()) : ?>
+		<?php $plural = get_post_type_object(get_post_type())->label; ?>
 
-                <article class="article">
-                    <header class="header">
-                        <h1 class="heading">
-                            <?php // get_the_title(get_option('page_for_posts')); ?>
-                            <?php
-                                // is_post_type_archive() || is_singular(get_post_types(array('_builtin'=>false)))) :
-                                if (is_archive()) :
-                                    echo 'Archive of '.$plural;
+			<article class="article">
+				<header class="article__header">
+					<h1 class="article__heading">
+						<?php // get_the_title(get_option('page_for_posts')); ?>
+						<?php
+						// is_post_type_archive() || is_singular(get_post_types(array('_builtin'=>false)))) :
+						if (is_archive()) :
+							echo 'Archive of '.$plural;
 
-                                        if (is_author()) : echo ' by Author';
-                                    elseif (is_year())   : echo ' by Year';
-                                    elseif (is_month())  : echo ' by Month';
-                                    elseif (is_day())    : echo ' by Day';
-                                    endif;
-                                else :
-                                    echo $plural;
-                                endif;
-                            ?>
-                        </h1><!--.heading-->
-                    </header><!--.header-->
+								if (is_author()) : echo ' by Author';
+							elseif (is_year())   : echo ' by Year';
+							elseif (is_month())  : echo ' by Month';
+							elseif (is_day())    : echo ' by Day';
+							endif;
+						else :
+							echo $plural;
+						endif;
+						?>
+					</h1>
+				</header>
 
-                    <?php // FIXME explore WP_Query('page_id='.get_option('page_for_posts')); to get page_for_posts the_content(); ?>
+				<section class="article__articles">
 
-                    <section class="articles -<?php echo strtolower($plural); ?>">
+					<?php while (have_posts()) : the_post(); ?>
 
-<?php while (have_posts()) : the_post(); ?>
-<?php get_template_part('content'.'-'.get_post_type(),get_post_format()); // content-{type}-{format}.php defaults to content.php ?>
-<?php endwhile; // have_posts ?>
+						<article class="article">
 
-                    </section><!--.articles-->
+							<header class="article__header">
+								<h1 class="article__heading">
+									<?php the_title(); ?>
+								</h1>
+							</header>
 
-                    <?php
-                        the_posts_pagination(array(
-                            'screen_reader_text' => __('Posts Navigation','custom'),
-                            'prev_text'          => __('Previous','custom').'<span class="screen-reader-text"> '.__('Page','custom').'</span>',
-                            'next_text'          => __('Next','custom').'<span class="screen-reader-text"> '.__('Page','custom').'</span>',
-                            'before_page_number' => '<span class="screen-reader-text">'.__('Page','custom').' </span>',
-                        ));
-                    ?>
-                </article><!--.article-->
+							<section class="article__content">
+								<?php the_content(); ?>
+								<?php wp_link_pages(); ?>
+							</section>
 
-<?php endif; // have_posts ?>
+							<?php edit_post_link(__('Edit', 'custom'), '<p class="article__edit">', '</p>'); ?>
 
-            </div><!--.inner--></main><!--#primary-->
+							<?php comments_template(); ?>
+						</article>
 
-<?php get_sidebar(); ?>
+					<?php endwhile; ?>
 
-        </div><!--.inner--></section><!--#content-->
+				</section>
 
-<?php get_footer(); ?>
+				<?php the_posts_pagination(); ?>
+			</article>
+
+		<?php else : ?>
+
+			<article class="article article--none">
+				<?php echo __('No Posts', 'custom'); ?>
+			</article>
+
+		<?php endif; ?>
+
+		<?php get_sidebar(); ?>
+
+	</main>
+</section>
+
+<?php get_footer();
