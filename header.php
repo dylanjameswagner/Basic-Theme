@@ -32,9 +32,9 @@
 
     <div id="top">
 
-        <section id="header"><div class="inner contain">
-            <header class="header">
-                <h1 class="heading">
+        <section class="header">
+            <header class="header__header">
+                <h1 class="header__heading">
                     <?php if (!is_front_page()) : ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                             <?php bloginfo('name'); ?>
@@ -45,7 +45,7 @@
                 </h1>
 
                 <?php if (get_bloginfo('description')) : ?>
-                                <h2 class="tagline"><?php bloginfo('description'); ?></h2>
+                    <h2 class="tagline"><?php bloginfo('description'); ?></h2>
                 <?php endif; // get_bloginfo description ?>
 
                 <?php
