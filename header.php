@@ -45,7 +45,7 @@
                 </h1>
 
                 <?php if (get_bloginfo('description')) : ?>
-                    <h2 class="tagline"><?php bloginfo('description'); ?></h2>
+                    <h2 class="header__tagline"><?php bloginfo('description'); ?></h2>
                 <?php endif; // get_bloginfo description ?>
 
                 <?php
