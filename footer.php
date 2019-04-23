@@ -1,60 +1,54 @@
-    </div><!--#top-->
+		<section class="footer contain">
+			<?php
+			if ( has_nav_menu( 'footer' ) ) :
+				wp_nav_menu( [
+					'container'       => 'nav',
+					'theme_location'  => 'footer',
+					'container_id'    => 'footer-menu',
+					'menu_id'         => 'footer-menu-list',
+					'container_class' => 'menu horizontal',
+					'menu_class'      => 'list contain',
+				] );
+			else :
+				wp_page_menu( [
+					'menu_class' => 'menu horizontal',
+					'show_home'  => true,
+					'depth'      => 1,
+				] );
+			endif;
+			?>
 
-    <section id="footer"><div class="inner contain">
-        <p class="return">
-            <a title="<?php echo _x('Return to Top','scroll to top of document','custom'); ?>" href="#top">
-                <?php echo _x('Return to Top','scroll to top of document','custom'); ?>
-            </a>
-        </p><!--.return-->
-<?php
-    if (has_nav_menu('footer')) :
-        wp_nav_menu(array(
-            'container'       => 'nav',
-            'theme_location'  => 'footer',
-            'container_id'    => 'footer-menu',
-            'menu_id'         => 'footer-menu-list',
-            'container_class' => 'menu horizontal',
-            'menu_class'      => 'list contain',
-        ));
-    else :
-        wp_page_menu(array(
-            'menu_class' => 'menu horizontal',
-            'show_home'  => true,
-            'depth'      => 1,
-        ));
-    endif;
-?>
-        <p class="social">
-            <a class="facebook" title="Facebook" target="_blank" href="http://facebook.com/">Facebook</a>
-            <a class="twitter" title="Twitter" target="_blank" href="http://twitter.com/">Twitter</a>
-            <a class="linkedin" title="LinkedIn" target="_blank" href="http://linkedin.com/">LinkedIn</a>
-        </p><!--.social-->
+			<p class="footer__social">
+				<a target="_blank" class="facebook" title="Facebook" href="https://facebook.com/">
+					Facebook
+				</a>
 
-        <footer class="notice">
-            <p class="copyright">
-                Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>
-            </p><!--.copyright-->
+				<a target="_blank" class="twitter" title="Twitter" href="https://twitter.com/">
+					Twitter
+				</a>
 
-            <p class="credit">
-                <a target="_blank" href="<?php echo wp_get_theme()->get('AuthorURI'); ?>">
-                    <?php echo __('Developed by','custom').' '.wp_get_theme()->get('Author'); ?>
-                </a>
-            </p><!--.credit-->
-        </footer><!--.notice-->
-    </div><!--.inner--></section><!--#footer-->
+				<a target="_blank" class="linkedin" title="LinkedIn" href="https://linkedin.com/">
+					LinkedIn
+				</a>
+			</p>
 
-<!--[if gte IE 9]><!-->
-<?php wp_footer(); ?>
-<!--<![endif]-->
+			<footer class="footer__notice">
+				<p class="footer__copyright">
+					Copyright &copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>
+				</p>
 
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create','UA-0000000-0','auto');
-        ga('send','pageview');
-    </script>
+				<p class="footer__credit">
+					<a target="_blank" href="<?php echo wp_get_theme()->get( 'AuthorURI' ); ?>">
+						<?php echo __( 'Developed by', 'custom' ) . ' ' . wp_get_theme()->get( 'Author' ); ?>
+					</a>
+				</p>
+			</footer>
+		</section>
+	</div>
+
+	<!-- bof wp_footer -->
+	<?php wp_footer(); ?>
+	<!-- eof wp_footer -->
 
 </body>
 </html>
