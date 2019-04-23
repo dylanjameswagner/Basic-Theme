@@ -1,71 +1,69 @@
 <?php get_header(); ?>
 
-        <section id="content"><div class="inner contain">
+<section class="content">
+	<main class="primary">
 
-            <main id="primary"><div class="inner">
+		<?php $s = isset($_GET['s']) ? $_GET['s'] : null; ?>
 
-<?php if (have_posts()) : ?>
-<?php $singular = get_post_type_object(get_post_type())->labels->singular_name; ?>
-<?php $s = isset($_GET['s']) ? $_GET['s'] : null; ?>
+		<article class="article">
+			<header class="article__header">
+				<h1 class="article__heading">
+					<?php echo $s ? sprintf('Search for &ldquo;%s&rdquo;', $s) : __('Search', 'custom'); ?>
+				</h1>
+			</header>
 
-                <article class="article">
-                    <header class="header">
-                        <h1 class="heading">
-                            <?php _e('Search','custom'); echo $s ? ' for &ldquo;'.$s.'&rdquo;' : NULL; ?>
-                        </h1><!--.heading-->
-                    </header><!--.header-->
+			<section class="article__content">
+				<?php get_search_form(); ?>
+			</section>
 
-                    <section class="content">
-                        <?php get_search_form(); ?>
-                    </section><!--.content-->
+			<?php if ($s && have_posts()) : ?>
 
-<?php if ($s) : ?>
+				<section class="articles__articles">
 
-                    <section class="articles -results">
+					<?php while (have_posts()) : the_post(); ?>
 
-<?php while (have_posts()) : the_post(); ?>
-<?php // get_template_part('content','search'); // content-search.php defaults to content.php ?>
-<?php // bof content-search.php ?>
-                        <article id="post-<?php the_ID(); ?>" class="article -search<?php // echo implode(' ',get_post_class()); ?>">
-                            <header class="header">
-                                <h1 class="heading">
-                                    <span class="label"><?php echo $singular; ?>:</span>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_title(); ?>
-                                    </a>
-                                </h1><!--.heading-->
-                            </header><!--.header-->
+						<article class="article">
+							<header class="article__header">
+								<h1 class="article__heading">
+									<a href="<?php the_permalink(); ?>">
+										<?php the_title(); ?>
+									</a>
+								</h1>
+								<p class="article__url">
+									<a href="<?php the_permalink(); ?>">
+										<?php the_permalink(); ?>
+									</a>
+								</p>
+							</header>
 
-                            <section class="content -excerpt">
-                                <?php the_excerpt(); ?>
-                            </section><!--.content-->
+							<section class="article__excerpt">
+								<?php the_excerpt(); ?>
+							</section>
 
-                            <?php edit_post_link(__('Edit','custom').' '.$singular,'<p class="edit -'.get_post_type().'">','</p>'); ?>
-                        </article><!--.article-->
-<?php // eof content-search.php ?>
-<?php endwhile; // have_posts ?>
+							<?php edit_post_link(__('Edit', 'custom'), '<p class="article__edit">', '</p>'); ?>
+						</article>
 
-                    </section><!--.articles-->
+					<?php endwhile; ?>
 
-                    <?php
-                        the_posts_pagination(array(
-                            'screen_reader_text' => __('Posts Navigation','custom'),
-                            'prev_text'          => __('Previous','custom').'<span class="screen-reader-text"> '.__('Page','custom').'</span>',
-                            'next_text'          => __('Next','custom').'<span class="screen-reader-text"> '.__('Page','custom').'</span>',
-                            'before_page_number' => '<span class="screen-reader-text">'.__('Page','custom').' </span>',
-                        ));
-                    ?>
+				</section>
 
-<?php endif; // $s ?>
+				<?php the_posts_pagination(); ?>
+			</article>
 
-                </article><!--.article-->
+		<?php else : ?>
 
-<?php endif; // have_posts ?>
+			<section class="article__content">
+				<p>
+					<?php echo $s ? __('No Search Results', 'custom') : __('Provide some keywords to begin a search.', 'custom'); ?>
+				</p>
+			</section>
 
-            </div><!--.inner--></main><!--#primary-->
+		<?php endif; ?>
 
-<?php // get_sidebar(); ?>
+	</main>
 
-        </div><!--.inner--></section><!--#content-->
+	<?php get_sidebar(); ?>
+
+</section>
 
 <?php get_footer(); ?>
