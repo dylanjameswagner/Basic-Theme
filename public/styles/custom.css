@@ -2,55 +2,55 @@
 
 /* anchors */
 
-    a {
-        color: inherit;
-    }
+a {
+    color: inherit;
+}
 
-    a:hover,
-    a:active {
-        outline: 0;
-        text-decoration: underline;
-    }
+a:hover,
+a:active {
+    outline: 0;
+    text-decoration: underline;
+}
 
-    a img {
-        border: 0;
-    }
+a img {
+    border: 0;
+}
 
 /* base */
 
-    html, body {
-        min-width: 320px;
-    }
+html, body {
+    min-width: 320px;
+}
 
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: rgba(0,0,0,.1);
-    }
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0,0,0,.1);
+}
 
 /* structure */
 
-    #top {
-        background-color: #fff;
-    }
+#top {
+    background-color: #fff;
+}
 
-    #header,
-    #footer,
-    #content {
-        margin: 0;
-    }
+#header,
+#footer,
+#content {
+    margin: 0;
+}
 
-    #header > .inner,
-    #footer > .inner,
-    #content > .inner {
-        margin: 0 auto;
-        padding: 0 5%;
-        /* max-width: 320px; */
-        max-width: 1440px;
-    }
+#header > .inner,
+#footer > .inner,
+#content > .inner {
+    margin: 0 auto;
+    padding: 0 5%;
+    /* max-width: 320px; */
+    max-width: 1440px;
+}
 
 /*
-@media (min-width: 480px){
+@media (min-width: 480px) {
 
     #header > .inner,
     #footer > .inner,
@@ -59,7 +59,7 @@
     }
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
 
     #header > .inner,
     #footer > .inner,
@@ -68,7 +68,7 @@
     }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
 
     #header > .inner,
     #footer > .inner,
@@ -77,7 +77,7 @@
     }
 }
 
-@media (min-width: 1280px){
+@media (min-width: 1280px) {
 
     #header > .inner,
     #footer > .inner,
@@ -86,7 +86,7 @@
     }
 }
 */
-@media (min-width: 1440px){
+@media (min-width: 1440px) {
 
     #header > .inner,
     #footer > .inner,
@@ -98,29 +98,29 @@
 
 /* header */
 
-    #header {}
-    #header {
-        padding: 1em 0 0;
-        background-color: rgba(0,0,0,.1);
-    }
-    #header > .inner {}
-    #header-menu {
-        margin-top: 1em;
-    }
+#header {}
+#header {
+    padding: 1em 0 0;
+    background-color: rgba(0,0,0,.1);
+}
+#header > .inner {}
+#header-menu {
+    margin-top: 1em;
+}
 
 /* footer */
 
-    #footer {
-        text-align: center;
-        padding: 1em 0;
-    }
-    #footer > .inner {
-        position: relative;
-    }
-    #footer .return {
-    }
+#footer {
+    text-align: center;
+    padding: 1em 0;
+}
+#footer > .inner {
+    position: relative;
+}
+#footer .return {
+}
 
-@media (min-width: 480px){
+@media (min-width: 480px) {
 
     #footer .menu {
         float: left;
@@ -134,31 +134,31 @@
     }
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1440px) {
 
     #footer .return {
         right: 72px;
     }
 }
 
-    #footer .credit {
-        margin-top: 0;
-    }
+#footer .credit {
+    margin-top: 0;
+}
 
 /* content */
 
-    #content {}
+#content {}
 
-    #primary,
-    #secondary {
-        margin: 0;
-        padding: 1em 0;
-    }
+#primary,
+#secondary {
+    margin: 0;
+    padding: 1em 0;
+}
 
-    #primary {}
-    #secondary {}
+#primary {}
+#secondary {}
 
-@media (min-width: 480px){
+@media (min-width: 480px) {
 
     #primary {
         float: left;
@@ -171,9 +171,9 @@
         width: 40%;
         padding-left: 1.2em;
     }
-}
+    }
 
-@media (min-width: 1024px){
+    @media (min-width: 1024px) {
 
     #primary {
         width: 70%;
@@ -186,33 +186,33 @@
 
 /* article */
 
-    article {
-        position: relative;
-    }
+article {
+    position: relative;
+}
 
-    article .header {}
-    article .content {}
-    article .footer {}
+article .header {}
+article .content {}
+article .footer {}
 
-    article .header + .content {
-        /* margin-top: 0; */
-    }
+article .header + .content {
+    /* margin-top: 0; */
+}
 
-    article .edit {
-        display: none;
-        position: absolute; top: 0; right: 0;
-        margin-top: 0;
-    }
-    article .edit > a {
-        padding: .25em .6em;
-        background-color: red;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-size: 12px;
-        color: #fff;
-    }
+article .edit {
+    display: none;
+    position: absolute; top: 0; right: 0;
+    margin-top: 0;
+}
+article .edit > a {
+    padding: .25em .6em;
+    background-color: red;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+}
 
-    article:hover > .edit,
-    article:hover > .inner > .edit {
-        display: block;
-    }
+article:hover > .edit,
+article:hover > .inner > .edit {
+    display: block;
+}

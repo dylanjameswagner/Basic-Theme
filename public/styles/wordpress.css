@@ -2,87 +2,87 @@
 
 /* wordpress construct admin-bar */
 
-    #wpadminbar {
-        margin-top: 0;
-        min-width: 320px;
-    }
+#wpadminbar {
+    margin-top: 0;
+    min-width: 320px;
+}
 
 /* wordpress construct post password form */
 
-    .post-password-form {
-        text-align: center;
-    }
+.post-password-form {
+    text-align: center;
+}
 
 /* captions */
 
-    .wp-caption {}
-    .wp-caption > a {
-        display: block;
-    }
+.wp-caption {}
+.wp-caption > a {
+    display: block;
+}
 
-    .wp-caption img {
-        margin: 0 auto;
-    }
+.wp-caption img {
+    margin: 0 auto;
+}
 
-    .wp-caption-text {
-        margin-top: 0;
-        padding: 5px 0;
-        font-size: .75em;
-    }
+.wp-caption-text {
+    margin-top: 0;
+    padding: 5px 0;
+    font-size: .75em;
+}
 
-    .wp-caption.aligncenter {
-        padding-left: 5px;
-    }
+.wp-caption.aligncenter {
+    padding-left: 5px;
+}
 
-    .wp-caption.alignleft,
-    .wp-caption.alignright {
-        width: auto !important;
-    }
+.wp-caption.alignleft,
+.wp-caption.alignright {
+    width: auto !important;
+}
 
 /* wordpress construct alignment */
 
-    .alignnone,
-    .aligncenter,
+.alignnone,
+.aligncenter,
+.alignleft,
+.alignright {
+    display: block;
+    max-width: 100%;
+}
+
+.aligncenter,
+.alignleft,
+.alignright {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.alignnone {
+    margin-left: 0;
+}
+
+.alignnone img {
+    margin: 0;
+}
+
+.alignleft,
+.alignright {
+    margin-bottom: .6em;
+}
+
+@media only screen and (min-width: 480px) {
+
     .alignleft,
     .alignright {
-        display: block;
-        max-width: 100%;
+        max-width: 49%;
     }
 
-    .aligncenter,
-    .alignleft,
+    .alignleft  {
+        float: left;
+        margin-right: 2.25em;
+    }
+
     .alignright {
-        margin-right: auto;
-        margin-left: auto;
+        float: right;
+        margin-left: 2.25em;
     }
-
-    .alignnone {
-        margin-left: 0;
-    }
-
-    .alignnone img {
-        margin: 0;
-    }
-
-    .alignleft,
-    .alignright {
-        margin-bottom: .6em;
-    }
-
-    @media only screen and (min-width: 480px){
-
-        .alignleft,
-        .alignright {
-            max-width: 49%;
-        }
-
-        .alignleft  {
-            float: left;
-            margin-right: 2.25em;
-        }
-
-        .alignright {
-            float: right;
-            margin-left: 2.25em;
-        }
-    }
+}
