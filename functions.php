@@ -23,9 +23,6 @@ function basic_theme_wp_enqueue_scripts() {
 	wp_register_style('basic-theme', get_theme_file_uri('/public/styles/basic-theme.css'));
 	wp_enqueue_style('basic-theme');
 
-	wp_register_script('html5shiv', get_theme_file_uri('/public/scripts/vendor/html5shiv-printshiv-3.7.2.min.js'));
-	wp_enqueue_script('html5shiv');
-
 	wp_register_script('prefixfree', get_theme_file_uri('/public/scripts/vendor/prefixfree-1.0.7.min.js'));
 	wp_enqueue_script('prefixfree');
 
