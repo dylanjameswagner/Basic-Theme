@@ -1,88 +1,91 @@
-/* wordpress.css */
-
-/* wordpress construct admin-bar */
+/** WordPress Construct admin-bar */
 
 #wpadminbar {
-    margin-top: 0;
-    min-width: 320px;
+	margin-top: 0;
+	min-width: 320px;
 }
 
-/* wordpress construct post password form */
+/** WordPress Construct post-password-form */
 
 .post-password-form {
-    text-align: center;
+	text-align: center;
 }
 
-/* captions */
+/** WordPress Construct wp-caption */
 
 .wp-caption {}
+
 .wp-caption > a {
-    display: block;
+	display: block;
 }
 
 .wp-caption img {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 .wp-caption-text {
-    margin-top: 0;
-    padding: 5px 0;
-    font-size: .75em;
+	margin-top: 0;
+	padding: 5px 0;
+	font-size: 0.75rem;
 }
 
 .wp-caption.aligncenter {
-    padding-left: 5px;
+	padding-left: 5px;
 }
 
 .wp-caption.alignleft,
 .wp-caption.alignright {
-    width: auto !important;
+	width: auto !important;
 }
 
-/* wordpress construct alignment */
+/** WordPress Construct wp-block-image */
 
-.alignnone,
-.aligncenter,
-.alignleft,
-.alignright {
-    display: block;
-    max-width: 100%;
+.wp-block-image .alignnone,
+.wp-block-image .aligncenter,
+.wp-block-image .alignleft,
+.wp-block-image .alignright {
+	display: block;
+	max-width: 100%;
 }
 
-.aligncenter,
-.alignleft,
-.alignright {
-    margin-right: auto;
-    margin-left: auto;
+.wp-block-image .aligncenter,
+.wp-block-image .alignleft,
+.wp-block-image .alignright {
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.alignnone {
-    margin-left: 0;
+.wp-block-image .alignnone {
+	margin-left: 0;
 }
 
-.alignnone img {
-    margin: 0;
+.wp-block-image .alignnone img {
+	margin: 0;
 }
 
-.alignleft,
-.alignright {
-    margin-bottom: .6em;
+.wp-block-image .alignleft,
+.wp-block-image .alignright {
+	margin-bottom: 0.6rem;
+}
+@media (min-width: 480px) {
+	.wp-block-image .alignleft,
+	.wp-block-image .alignright {
+		max-width: 50%;
+	}
 }
 
-@media only screen and (min-width: 480px) {
+.wp-block-image .alignleft {}
+@media (min-width: 480px) {
+	.wp-block-image .alignleft {
+		float: left;
+		margin-right: 40px;
+	}
+}
 
-    .alignleft,
-    .alignright {
-        max-width: 49%;
-    }
-
-    .alignleft  {
-        float: left;
-        margin-right: 2.25em;
-    }
-
-    .alignright {
-        float: right;
-        margin-left: 2.25em;
-    }
+.wp-block-image .alignright {}
+@media (min-width: 480px) {
+	.wp-block-image .alignright {
+		float: right;
+		margin-left: 40px;
+	}
 }

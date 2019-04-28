@@ -1,60 +1,54 @@
-    </div><!--#top-->
+		<section class="footer">
+			<?php
+			if (has_nav_menu('footer')) :
+				wp_nav_menu([
+					'theme_location'  => 'footer',
+					'container'       => 'nav',
+					'container_class' => 'footer-menu menu horizontal',
+					'container_id'    => false,
+					'menu_class'      => 'footer-menu__list menu__list',
+					'menu_id'         => 'IGNORE',
+				]);
+			else :
+				wp_page_menu([
+					'show_home'  => true,
+					'container'  => 'nav', // Undocumented // Default 'div'
+					'menu_class' => 'footer-menu menu horizontal',
+					'menu_id'    => false,
+					'before'     => '<ul class="footer-menu__list menu__list">', // Default '<ul>'
+				]);
+			endif;
+			?>
 
-    <section id="footer"><div class="inner contain">
-        <p class="return">
-            <a title="<?php echo _x('Return to Top','scroll to top of document','custom'); ?>" href="#top">
-                <?php echo _x('Return to Top','scroll to top of document','custom'); ?>
-            </a>
-        </p><!--.return-->
-<?php
-    if (has_nav_menu('footer')) :
-        wp_nav_menu(array(
-            'container'       => 'nav',
-            'theme_location'  => 'footer',
-            'container_id'    => 'footer-menu',
-            'menu_id'         => 'footer-menu-list',
-            'container_class' => 'menu horizontal',
-            'menu_class'      => 'list contain',
-        ));
-    else :
-        wp_page_menu(array(
-            'menu_class' => 'menu horizontal',
-            'show_home'  => true,
-            'depth'      => 1,
-        ));
-    endif;
-?>
-        <p class="social">
-            <a class="facebook" title="Facebook" target="_blank" href="http://facebook.com/">Facebook</a>
-            <a class="twitter" title="Twitter" target="_blank" href="http://twitter.com/">Twitter</a>
-            <a class="linkedin" title="LinkedIn" target="_blank" href="http://linkedin.com/">LinkedIn</a>
-        </p><!--.social-->
+			<p class="footer__social">
+				<a class="facebook" title="Facebook" target="_blank" href="http://facebook.com/">
+					<?php _e('Facebook', 'basic-theme'); ?>
+				</a>
+				<a class="twitter" title="Twitter" target="_blank" href="http://twitter.com/">
+					<?php _e('Twitter', 'basic-theme'); ?>
+				</a>
+				<a class="linkedin" title="LinkedIn" target="_blank" href="http://linkedin.com/">
+					<?php _e('LinkedIn', 'basic-theme'); ?>
+				</a>
+			</p>
 
-        <footer class="notice">
-            <p class="copyright">
-                Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>
-            </p><!--.copyright-->
+			<footer class="footer__notice">
+				<p class="footer__copyright">
+					<?php printf(__('Copyright &copy; %d %s', 'basic-theme'), date('Y'), get_bloginfo('name')); ?>
+				</p>
+				<p class="footer__credit">
+					<a target="_blank" href="<?php echo wp_get_theme()->get('AuthorURI'); ?>">
+						<?php printf(__('Developed by %s', 'basic-theme'), wp_get_theme()->get('Author')); ?>
+					</a>
+				</p>
+			</footer>
+		</section>
 
-            <p class="credit">
-                <a target="_blank" href="<?php echo wp_get_theme()->get('AuthorURI'); ?>">
-                    <?php echo __('Developed by','custom').' '.wp_get_theme()->get('Author'); ?>
-                </a>
-            </p><!--.credit-->
-        </footer><!--.notice-->
-    </div><!--.inner--></section><!--#footer-->
+	</div><!-- .site Opened in header.php -->
 
-<!--[if gte IE 9]><!-->
-<?php wp_footer(); ?>
-<!--<![endif]-->
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create','UA-0000000-0','auto');
-        ga('send','pageview');
-    </script>
+	<!-- bof wp_footer(); -->
+	<?php wp_footer(); ?>
+	<!-- eof wp_footer(); -->
 
 </body>
 </html>

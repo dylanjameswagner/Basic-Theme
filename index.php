@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 <section class="content">
-	<main class="primary">
+	<main role="main" class="primary">
 
 		<?php $plural = get_post_type_object(get_post_type())->label; ?>
 
-		<article class="article">
+		<article role="article" class="article">
 			<header class="article__header">
 				<h1 class="article__heading">
 					<?php
@@ -39,7 +39,7 @@
 								<?php the_excerpt(); ?>
 							</section>
 
-							<?php edit_post_link(__('Edit', 'custom'), '<p class="article__edit">', '</p>'); ?>
+							<?php edit_post_link(__('Edit', 'basic-theme'), '<p class="article__edit">', '</p>'); ?>
 						</article>
 
 					<?php endwhile; ?>
@@ -53,7 +53,7 @@
 
 			<section class="article__content">
 				<p>
-					<?php echo __('No Posts', 'custom'); ?>
+					<?php _e('No Posts', 'basic-theme'); ?>
 				</p>
 			</section>
 

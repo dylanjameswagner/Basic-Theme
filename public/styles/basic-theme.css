@@ -1,0 +1,179 @@
+@import url('./vendor/normalize-3.0.3.min.css');
+@import url('./base.css');
+@import url('./wordpress.css');
+@import url('./constructs.css');
+
+/* anchors */
+
+a {
+	color: inherit;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+	text-decoration: underline;
+	color: red;
+}
+
+a img {
+	border: 0;
+}
+
+/* base */
+
+html,
+body {
+	min-width: 320px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
+}
+
+/* structure */
+
+.site {
+	/* max-width: 320px; */
+	/* max-width: 768px; */
+	/* max-width: 1024px; */
+	max-width: 1440px;
+	margin: 0 auto;
+	background-color: white;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 480px) {
+	.site {
+		max-width: 480px;
+	}
+}
+@media (min-width: 768px) {
+	.site {
+		max-width: 768px;
+	}
+}
+@media (min-width: 1024px) {
+	.site {
+		max-width: 1024px;
+	}
+}
+@media (min-width: 1280px) {
+	.site {
+		max-width: 1280px;
+	}
+}
+@media (min-width: 1440px) {
+	.site {
+		max-width: 1440px;
+	}
+}
+
+.header,
+.footer,
+.content {
+	padding: 0 5%;
+}
+@media (min-width: 1440px) {
+	.header,
+	.footer,
+	.content {
+		padding: 0 72px; /* (1440 * 5%) / 2 */
+	}
+}
+
+.header {
+	padding-top: 1em;
+	background-color: rgba(0,0,0,.1);
+}
+
+.header-menu {
+	margin-top: 1em;
+	margin-left: -0.6em;
+}
+
+.footer {
+	padding: 1em 0;
+	text-align: center;
+}
+
+.footer-menu {}
+@media (min-width: 480px) {
+	.footer-menu {
+		margin: 0 0 1.6rem;
+	}
+}
+
+.footer-menu .menu__list {
+	justify-content: center;
+}
+
+.footer__social {
+	display: flex;
+	justify-content: center;
+}
+@media (min-width: 480px) {
+	.footer__social {
+		clear: both;
+	}
+}
+
+.footer__social a {
+	margin: 0 5px;
+}
+
+.footer__credit {
+	margin-top: 0;
+}
+
+.content {}
+@media (min-width: 768px) {
+	.content {
+		display: flex;
+	}
+}
+
+.primary,
+.secondary {
+	margin: 0;
+	padding: 1em 0;
+}
+
+.primary {}
+@media (min-width: 768px) {
+	.primary {
+		flex-grow: 1;
+		padding-right: 1.2em;
+	}
+}
+
+.secondary {}
+@media (min-width: 768px) {
+	.secondary {
+		flex-shrink: 0;
+		width: 320px;
+		padding-left: 1.2em;
+	}
+}
+
+article {
+	position: relative;
+}
+
+.article__header {}
+
+.article__content {}
+
+.article__footer {}
+
+.article__edit {}
+
+.article__edit > a {
+	padding: 0.25em 0.6em;
+	background-color: red;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 12px;
+	color: white;
+}
