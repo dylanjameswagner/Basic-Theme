@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 
-<section class="content contain">
-	<main class="primary contain">
+<section class="content">
+	<main class="primary">
 
-		<?php $s = isset( $_GET['s'] ) ? $_GET['s'] : null; ?>
+		<?php $s = isset($_GET['s']) ? $_GET['s'] : null; ?>
 
 		<article class="article">
 			<header class="article__header">
 				<h1 class="article__heading">
-					<?php echo $s ? sprintf( 'Search for &ldquo;%s&rdquo;', $s ) : __( 'Search', 'custom' ); ?>
+					<?php echo $s ? sprintf('Search for &ldquo;%s&rdquo;', $s) : __('Search', 'custom'); ?>
 				</h1>
 			</header>
 
@@ -16,11 +16,11 @@
 				<?php get_search_form(); ?>
 			</section>
 
-			<?php if ( $s && have_posts() ) : ?>
+			<?php if ($s && have_posts()) : ?>
 
 				<section class="articles__articles">
 
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php while (have_posts()) : the_post(); ?>
 
 						<article class="article">
 							<header class="article__header">
@@ -40,7 +40,7 @@
 								<?php the_excerpt(); ?>
 							</section>
 
-							<?php edit_post_link( __( 'Edit', 'custom' ), '<p class="article__edit">', '</p>' ); ?>
+							<?php edit_post_link(__('Edit', 'custom'), '<p class="article__edit">', '</p>'); ?>
 						</article>
 
 					<?php endwhile; ?>
@@ -54,7 +54,7 @@
 
 			<section class="article__content">
 				<p>
-					<?php echo $s ? __( 'No Search Results', 'custom' ) : __( 'Provide some keywords to begin a search.', 'custom' ); ?>
+					<?php echo $s ? __('No Search Results', 'custom') : __('Provide some keywords to begin a search.', 'custom'); ?>
 				</p>
 			</section>
 
