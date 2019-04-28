@@ -13,8 +13,9 @@ function basic_theme_after_setup_theme() {
 }
 add_action('after_setup_theme', 'basic_theme_after_setup_theme');
 
-/* styles & scripts */
-
+/**
+ * Styles & Scripts
+ * */
 function basic_theme_wp_enqueue_scripts() {
 	wp_register_style('open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic');
 	wp_enqueue_style('open-sans');
