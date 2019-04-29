@@ -5,7 +5,7 @@
 		<?php if (!dynamic_sidebar(strtolower($plural))) : ?>
 			<?php // default content ?>
 			<?php get_search_form(); ?>
-		<?php endif; // !dynamic_sidebar ?>
+		<?php endif; ?>
 	</section>
 
-<?php // endif; // is_active_sidebar ?>
+<?php // endif; ?>
