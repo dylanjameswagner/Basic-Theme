@@ -47,17 +47,18 @@
 				</section>
 
 				<?php the_posts_pagination(); ?>
-			</article>
 
-		<?php else : ?>
+			<?php else : ?>
 
-			<section class="article__content">
-				<p>
-					<?php _e('No Posts', 'basic-theme'); ?>
-				</p>
-			</section>
+				<section class="article__content">
+					<p>
+						<?php _e('No Posts', 'basic-theme'); ?>
+					</p>
+				</section>
 
-		<?php endif; ?>
+			<?php endif; ?>
+
+		</article>
 
 	</main>
 
