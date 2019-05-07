@@ -5,11 +5,12 @@
 
 		<?php $singular = get_post_type_object(get_post_type())->labels->singular_name; ?>
 
-		<?php if (have_posts()) : ?>
+		<article role="article" class="article <?php echo implode(' ', get_post_class()); ?>">
 
-			<?php while (have_posts()) : the_post(); ?>
+			<?php if (have_posts()) : ?>
 
-				<article role="article" class="article <?php echo implode(' ', get_post_class()); ?>">
+				<?php while (have_posts()) : the_post(); ?>
+
 					<header class="article__header">
 						<h1 class="article__heading">
 							<?php the_title(); ?>
@@ -24,11 +25,12 @@
 					<?php edit_post_link(__('Edit', 'basic-theme'), '<p class="article__edit">', '</p>'); ?>
 
 					<?php comments_template(); ?>
-				</article>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
 
-		<?php endif; ?>
+			<?php endif; ?>
+
+		</article>
 
 	</main>
 

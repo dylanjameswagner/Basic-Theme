@@ -17,7 +17,7 @@
 
 			<?php if ($s && have_posts()) : ?>
 
-				<section class="articles__articles">
+				<section class="article__articles">
 
 					<?php while (have_posts()) : the_post(); ?>
 
@@ -47,17 +47,18 @@
 				</section>
 
 				<?php the_posts_pagination(); ?>
-			</article>
 
-		<?php else : ?>
+			<?php else : ?>
 
-			<section class="article__content">
-				<p>
-					<?php echo $s ? __('No Search Results', 'basic-theme') : __('Provide some keywords to begin a search.', 'basic-theme'); ?>
-				</p>
-			</section>
+				<section class="article__content">
+					<p>
+						<?php echo $s ? __('No Search Results', 'basic-theme') : __('Provide some keywords to begin a search.', 'basic-theme'); ?>
+					</p>
+				</section>
 
-		<?php endif; ?>
+			<?php endif; ?>
+
+		</article>
 
 	</main>
 
