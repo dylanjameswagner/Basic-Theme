@@ -88,6 +88,7 @@ add_action('init', function () {
 			// 'author',
 			// 'thumbnail',
 			// 'comments',
+			// 'page-attributes',
 		],
 		'show_in_rest' => true, // Enable Block Editor
 	]);
